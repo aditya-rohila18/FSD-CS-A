@@ -1,7 +1,7 @@
 function register(cb) {
     setTimeout(() => {
         console.log('register end');
-        cb(); // call the next step AFTER register finishes
+        cb();
     }, 8000);
 }
 

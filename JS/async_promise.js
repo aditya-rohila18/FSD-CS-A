@@ -17,10 +17,11 @@ function sendEmail() {
 }
 
 function login() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log('login end');
-            resolve();
+            reject("login failed");
+            //resolve();
         }, 2000);
     });
 }
@@ -49,6 +50,7 @@ register()
     .then(login)
     .then(getData)
     .then(displayData)
-    .catch((err) => console.error(err));
+    .catch((err) => console.log("error: " + err))
+    .finally(() => console.log("Inside Finally"));
 
 console.log('call other application');
