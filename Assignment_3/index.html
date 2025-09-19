@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .flex-col {
+            flex-direction: column;
+        }
+
+        img {
+            width: 40rem;
+            height: 20rem;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex flex-col">
+        <header class="flex">
+            <div style="
+            width: 5rem;
+            height: 5rem;
+            background: lightgray;
+            border-radius: 999px;
+          "></div>
+        </header>
+        <header class="flex">
+            <h1>Image Gallery</h1>
+        </header>
+        <img />
+        <button onclick="changeImage()">Change Image</button>
+    </div>
+
+    <script>
+        const images = [
+            "https://picsum.photos/640/320?random=1",
+            "https://picsum.photos/640/320?random=2",
+            "https://picsum.photos/640/320?random=3"
+        ];
+
+        const imageContainer = document.querySelector("img");
+        let idx = 0;
+
+        imageContainer.src = images[idx];
+
+        function changeImage() {
+            idx = (idx + 1) % images.length;
+            imageContainer.src = images[idx];
+        }
+    </script>
+</body>
+
+</html>
