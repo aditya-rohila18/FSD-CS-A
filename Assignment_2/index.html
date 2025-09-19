@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <style>
+        .container {
+            height: 400px;
+            width: 400px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: lightgrey;
+            border-radius: 10px;
+        }
+
+        .logo {
+            text-align: center;
+            border-radius: 50%;
+            border: 2px solid black;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .counter {
+            text-align: center;
+        }
+
+        #count {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        #warning {
+            color: red;
+            font-weight: bold;
+            display: none;
+            /* hidden by default */
+        }
+
+        button {
+            height: 40px;
+            width: 60px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <div class="counter">
+            <h1>Counter App</h1>
+            <h1 id="count">0</h1>
+            <p id="warning">⚠ Warning: Value is greater than 10!</p>
+            <button onclick="increment()">+</button>
+            <button onclick="decrement()">-</button>
+        </div>
+    </div>
+
+    <script>
+        let count = 0;
+        function updateDisplay() {
+            document.getElementById("count").innerText = count;
+            // show warning if count > 10
+            document.getElementById("warning").style.display = count > 10 ? 'block' : 'none';
+        }
+        function increment() {
+            count++;
+            updateDisplay();
+        }
+        function decrement() {
+            count--;
+            updateDisplay();
+        }
+    </script>
+</body>
+
+</html>
