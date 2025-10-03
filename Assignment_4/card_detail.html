@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Detail</title>
+    <style>
+        :root {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #222
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: #f5f7fb
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(20, 30, 70, 0.08);
+            width: 100%;
+            max-width: 520px;
+            padding: 24px
+        }
+
+        .card h1 {
+            text-align: center;
+            margin: 0 0 18px
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px
+        }
+
+        input[type="text"],
+        select {
+            padding: 10px;
+            border: 1px solid #dbe3ef;
+            border-radius: 6px;
+            font-size: 15px
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 18px
+        }
+
+        button {
+            background: #2b6cb0;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer
+            
+        }
+
+        button:active {
+            transform: translateY(1px)
+        }
+
+        @media (max-width:420px) {
+            .skills {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card" aria-labelledby="card-title">
+        <h1 id="card-title">Card Detail</h1>
+
+        <form id="card-form" novalidate>
+            <div class="form-row">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" type="text" placeholder="e.g. Aditya Rohila" required>
+            </div>
+
+            <div class="form-row">
+                <label for="class">Class</label>
+                <input id="class" name="class" type="text" placeholder="e.g. PhD">
+            </div>
+
+            <div class="form-row">
+                <legend style="font-weight:600;">Programming Skills</legend>
+                <div class="skills">
+                    <div style="margin-inline-end: auto;";>
+                        <br>
+                        <input id="skill-1" name="skill1" type="text" list="skills-list" placeholder="Python">
+                        <input id="skill-2" name="skill2" type="text" list="skills-list" placeholder="Java">
+                        <input id="skill-3" name="skill3" type="text" list="skills-list" placeholder="React">
+                </div>
+
+            <datalist id="skills-list">
+                <option value="Python"></option>
+                <option value="Java"></option>
+                <option value="JavaScript"></option>
+                <option value="React"></option>
+                <option value="C++"></option>
+                <option value="Go"></option>
+            </datalist>
+            <br>
+            <div class="actions">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <script>
+            // Small helper to show accessible messages
+            const form = document.getElementById('card-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const payload = {
+                    name: data.get('name') || '',
+                    class: data.get('class') || '',
+                    skills: [data.get('skill1') || '', data.get('skill2') || '', data.get('skill3') || ''].filter(Boolean)
+                };
+                // For now show in a small dialog using alert (static page safe)
+                alert('Submitted:\nName: ' + payload.name + '\nClass: ' + payload.class + '\nSkills: ' + (payload.skills.join(', ') || 'None'));
+                // You can replace alert with an AJAX call or other handling as needed.
+            });
+        </script>
+    </main>
+</body>
+
+</html>
