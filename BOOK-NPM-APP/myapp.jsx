@@ -1,10 +1,10 @@
-import Book from "./Book";
+import Book from "./book.jsx";
 
 function MyApp() {
   const books = [
-    { id: 1, title: "The Alchemist", price: "₹199", image: "https://via.placeholder.com/150" },
-    { id: 2, title: "To Kill a Mockingbird", price: "₹299", image: "https://via.placeholder.com/150" },
-    { id: 3, title: "1984", price: "₹249", image: "https://via.placeholder.com/150" }
+    { id: 1, title: "The Alchemist", price: "₹199", image: "https://m.media-amazon.com/images/I/617lxveUjYL.jpg" },
+    { id: 2, title: "To Kill a Mockingbird", price: "₹299", image: "https://m.media-amazon.com/images/I/81gepf1eMqL.jpg" },
+    { id: 3, title: "1984", price: "₹249", image: "https://m.media-amazon.com/images/I/71wANojhEKL._AC_UF1000,1000_QL80_.jpg" }
   ];
 
   return (
