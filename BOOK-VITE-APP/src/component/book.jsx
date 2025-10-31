@@ -1,6 +1,5 @@
-import React from 'react'
-import './Book.css/'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import './book.css'
 const Book = ({book}) => {
     const [count,setCount]=useState(0);
     function increment(){
