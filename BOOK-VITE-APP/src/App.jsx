@@ -1,34 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
+import Book from './component/book'
 import './App.css'
+import Header from './component/header'
 
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+const App = () => {
+  const data = [
+    {image: "https://m.media-amazon.com/images/I/31WIiECCtxL._AC_UF1000,1000_QL80_.jpg", title:"Physics",price: 765},
+    {image: "https://m.media-amazon.com/images/I/71EbahdYuWL._AC_UF1000,1000_QL80_.jpg", title:"Chemistry",price: 415},
+    {image: "https://m.media-amazon.com/images/I/918O3XZAW9L.jpg", title:"Maths",price: 595}
+  ]
+    return (
+    <div>
+      <Header>
+      <div className='app'>
+        {
+          data.map((b,i)=>(
+            <Book key={i} book={b}/>
+          ))
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      </Header>
+    </div>
   )
 }
 
