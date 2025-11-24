@@ -1,10 +1,9 @@
 import React from 'react'
 import './Header.css'
-
 const Header = () => {
   return (
     <div className='header'>
-      <h1>Shopping Cart App</h1>
+      <h1><center>Shopping Cart App</center></h1>
     </div>
   )
 }

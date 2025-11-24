@@ -10,26 +10,26 @@
   min-height: 100vh;
 }
 
-/* Two-column layout */
+/* Two-column layout - use a fixed narrow sidebar and a flexible content area */
 .dashboard-main {
-  height: 85vh;
   display: grid;
-  grid-template-columns: 1fr 6fr; /* left 25%, right 75% */
-  gap: 10px;
+  grid-template-columns: 280px 1fr; /* sidebar and main content */
+  gap: 16px;
   padding: 20px;
+  align-items: start;
+  min-height: calc(100vh - 80px);
 }
 
-/* Profile column */
+/* Profile column (sidebar) - avoid large fixed heights and huge padding */
 .profile-section {
-  height: 78vh;
+  min-height: 200px;
   background-color: gray;
   border-radius: 10px;
-  /* border: 5px solid black; */
-  padding: 110px 15px;
+  padding: 1.5rem 1rem;
   text-align: center;
-  line-height: 25px;
-  color: whitesmoke
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  line-height: 1.4;
+  color: whitesmoke;
+  overflow: auto;
 }
 
 .profile-pic {
@@ -64,16 +64,25 @@
 }
 /* Content column */
 .content-section {
-  overflow-y:auto;
   background-color: #fff;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 300px;
+  overflow-y: auto;
 }
 
 /* Responsive view for mobile */
+@media (max-width: 1024px) {
+  .dashboard-main {
+    grid-template-columns: 220px 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .dashboard-main {
     grid-template-columns: 1fr;
+    padding: 12px;
   }
+  .profile-section { padding: 1rem; }
 }

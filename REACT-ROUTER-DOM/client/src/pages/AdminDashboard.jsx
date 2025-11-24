@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../component/Header'
+import Header from '../components/Header'
 import { Outlet } from 'react-router-dom'
-import Footer from '../component/Footer'
-import AdminNavbar from '../component/AdminNavbar'
+import Footer from '../components/Footer'
+import AdminNavbar from '../components/AdminNavbar'
 
 const AdminDashboard = () => {
   return (

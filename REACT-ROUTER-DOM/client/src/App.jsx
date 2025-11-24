@@ -3,13 +3,13 @@ import './App.css'
 import { useState } from 'react'
 import UserContext from './context/UserContext'
 import UserDashboard from './pages/UserDashboard'
-import Shoplist from './component/Shoplist'
+import Shoplist from './components/ShopList'
 import AdminDashboard from './pages/AdminDashboard'
-import ViewCart from './component/ViewCart'
+import ViewCart from './components/ViewCart'
 import Home from './pages/Home'
-import Login from './component/Login'
-import Logout from './component/Logout'
-import AdminTask from './component/AdminTask'
+import Login from './components/Login'
+import Logout from './components/Logout'
+import AdminTask from './components/AdminTask'
 const App = () => {
   const [cartItem,setCartItem]=useState([]);
   function addtocart(item){

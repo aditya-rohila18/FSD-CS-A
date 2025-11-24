@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
-import Header from "../component/Header";
-import Footer from "../component/Footer";
-import Navbar from "../component/Navbar";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import { Outlet } from "react-router-dom";
-import profile from '../assets/images/Ashish_pic.jpg'
+//import profile from '../assets/images/Ashish_pic.jpg'
 const UserDashboard = () => {
   return (
     <div className="dashboard-container">
@@ -16,7 +16,7 @@ const UserDashboard = () => {
         <div className="profile-section">
           <h2>User Profile</h2>
           <img
-            src={profile}
+            //src={profile}
             alt="Profile pic"
             className="profile-pic"
           />

@@ -1,8 +1,8 @@
 import React from 'react'
-import Header from '../component/Header'
-import Footer from '../component/Footer'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 import { Outlet } from 'react-router-dom'
-import HomeNavbar from '../component/HomeNavbar'
+import HomeNavbar from '../components/HomeNavbar'
 
 const Home = () => {
   return (
