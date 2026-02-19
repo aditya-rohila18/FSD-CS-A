@@ -1,0 +1,13 @@
+{
+  "name": "even_sem",
+  "version": "1.0.0",
+  "description": "MY First Mern Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["NodeJS", "ExpressJS", "MongoDB"],
+  "author": "Aditya Rohila",
+  "license": "ISC",
+  "type": "module"
+}
