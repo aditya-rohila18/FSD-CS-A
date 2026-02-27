@@ -4,9 +4,14 @@
   "description": "MY First Mern Project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "keywords": ["NodeJS", "ExpressJS", "MongoDB"],
+  "keywords": [
+    "NodeJS",
+    "ExpressJS",
+    "MongoDB"
+  ],
   "author": "Aditya Rohila",
   "license": "ISC",
   "type": "module"
